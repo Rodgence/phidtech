@@ -1,14 +1,4 @@
-/**
-* Template Name: Tempo
-* Updated: Jan 29 2024 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -73,6 +63,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
+  background:rgba(0, 0, 0, 0.9);
 }
 
 #header .logo {
@@ -83,6 +74,7 @@ h6 {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+  
 }
 
 #header .logo a {
