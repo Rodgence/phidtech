@@ -135,6 +135,11 @@
 
   </main><!-- End #main -->
 
+  <!-- include blogs -->
+  <?php
+      include("includes/blogs.php");
+  ?>
+
  <!-- include footer file -->
  <?php
     include("includes/footer.php")
