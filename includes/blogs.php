@@ -30,35 +30,31 @@
 
                         <!-- fetch from a database -->
                         <?php
-                                $sql = "SELECT * FROM BlogPosts";
-                                $result = mysqli_query($conn, $sql);
-                                
-                                if (mysqli_num_rows($result) > 0) {
-                                    // Output data of each row
-                                    while($row = mysqli_fetch_assoc($result)) {
-                                        
-                            ?><div class="col-12 col-md-6 col-xl-3 mb-4">
+                                  $sql = "SELECT *, LEFT(message, 85) AS truncated_message FROM BlogPosts";
+                                  $result = mysqli_query($conn, $sql);
 
-                                <div class="card mr-3">
-                                    <img src="admin/<?php  echo $row["image_path"]; ?>" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                      <h5 class="card-title"><?php echo $row["title"]; ?></h5>
-                                      <p class="card-text"><?php echo $row["message"]; ?></p>
-                                      <a href="#" class="btn btn-primary">Read more</a>
-                                    </div>
-                                </div>
-                            </div><?php
-                        }
-                    } else {
-                        echo "0 results";
-                    }
-                    
-                    mysqli_close($conn);
-                    ?>
+                                  if (mysqli_num_rows($result) > 0) {
+                                      // Output data of each row
+                                      while($row = mysqli_fetch_assoc($result)) {
+                              ?>
+                                          <div class="col-12 col-md-6 col-xl-3 mb-4">
+                                              <div class="card mr-3">
+                                                  <img src="admin/<?php echo $row["image_path"]; ?>" class="card-img-top" alt="...">
+                                                  <div class="card-body">
+                                                    <h5 class="card-title"><?php echo $row["title"]; ?></h5>
+                                                    <p class="card-text"><?php echo $row["truncated_message"]; ?></p>
+                                                    <a href="./blog-single.php?id=<?php echo $row["id"]; ?>" class="btn btn-primary">Read more</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                              <?php
+                                      }
+                                  } else {
+                                      echo "0 results";
+                                  }
 
-
-                        
-                            
+                                  mysqli_close($conn);
+                        ?>                         
                         </div>
                       </div>
                       

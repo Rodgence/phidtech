@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
         die("Error: This file extension is not allowed.");
     }
 
-    if($fileSize < 1000000){
+    if($fileSize > 10000000){
         die("Error: This file is too large.");
     }
 
